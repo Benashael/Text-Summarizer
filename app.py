@@ -1,5 +1,6 @@
 import streamlit as st
 import PyPDF2
+from gensim import summarization
 from gensim.summarization import summarize
 from langdetect import detect
 
