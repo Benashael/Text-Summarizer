@@ -1,4 +1,7 @@
 streamlit
-gensim
 PyPDF2
+sumy
 langdetect
+requests
+beautifulsoup4
+gensim
