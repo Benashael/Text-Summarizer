@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Select a page:", ("Home Page", "Summarize Text", "Summarize Document", "Summarize URL"))
 
-if page == "Introduction":
+if page == "Home Page":
     # Introduction Page
     st.title("Welcome to the Text Summarizer App")
     st.write("This app is designed to help you summarize text, documents (PDF), or web content from URLs. It offers three main features, each explained below:")
