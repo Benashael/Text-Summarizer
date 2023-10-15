@@ -101,7 +101,7 @@ elif page == "Summarize Document":
                             parser = PlaintextParser.from_string(pdf_text, Tokenizer("english"))
                             summarizer = LsaSummarizer()
                             summary = summarizer(parser.document, 5)  # 5 sentences in the summary
-                            summary_text = " ".join([str(sentence) for sentence in summary])
+                            summary_text = " ".join(map(str, summary))
                             st.subheader("Summary:")
                             st.write(summary_text)
                 except Exception as e:
