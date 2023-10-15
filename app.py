@@ -7,42 +7,41 @@ from langdetect import detect
 import requests
 from bs4 import BeautifulSoup
 
-# Introduction Page
-st.title("Welcome to the Text Summarizer App")
-st.write("This app is designed to help you summarize text, documents (PDF), or web content from URLs. It offers three main features, each explained below:")
-
-# Feature 1: Summarize Text
-st.header("Feature 1: Summarize Text")
-st.write("You can use this feature to generate summaries from a piece of text. Follow these steps:")
-st.write("1. Enter or paste the text you want to summarize into the 'Enter text for summarization' field.")
-st.write("2. Click the 'Summarize' button to receive a summary of the input text.")
-st.write("3. The summary will be displayed below the input field.")
-st.write("Please note that there is a limit of 1000 words for text input.")
-
-# Feature 2: Summarize Document
-st.header("Feature 2: Summarize Document")
-st.write("This feature allows you to summarize the content of a PDF document. Here's how you can use it:")
-st.write("1. Click on the 'Summarize Document' option in the sidebar.")
-st.write("2. Use the 'Upload a PDF file' button to upload the PDF document you want to summarize.")
-st.write("3. Click 'Summarize PDF' to receive a summary of the document's content.")
-st.write("4. The summary will be displayed below the uploaded document.")
-st.write("Keep in mind that document summarization is limited to the first 2 pages of the PDF.")
-
-# Feature 3: Summarize URL
-st.header("Feature 3: Summarize URL")
-st.write("With this feature, you can generate summaries from web content. Here's how to use it:")
-st.write("1. Select 'Summarize URL' in the sidebar.")
-st.write("2. Enter the URL of a web page you want to summarize in the 'Enter a URL for summarization' field.")
-st.write("3. Click 'Summarize URL' to get a summary of the web content.")
-st.write("4. The summary will be displayed below the URL input.")
-st.write("Please note that web content summarization is limited to 1000 words, and you should enter a valid URL.")
-
 # Sidebar Navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Select a page:", ("Introduction", "Summarize Text", "Summarize Document", "Summarize URL"))
+page = st.sidebar.radio("Select a page:", ("Home Page", "Summarize Text", "Summarize Document", "Summarize URL"))
 
 if page == "Introduction":
-    pass
+    # Introduction Page
+    st.title("Welcome to the Text Summarizer App")
+    st.write("This app is designed to help you summarize text, documents (PDF), or web content from URLs. It offers three main features, each explained below:")
+    
+    # Feature 1: Summarize Text
+    st.header("Feature 1: Summarize Text")
+    st.write("You can use this feature to generate summaries from a piece of text. Follow these steps:")
+    st.write("1. Enter or paste the text you want to summarize into the 'Enter text for summarization' field.")
+    st.write("2. Click the 'Summarize' button to receive a summary of the input text.")
+    st.write("3. The summary will be displayed below the input field.")
+    st.write("Please note that there is a limit of 1000 words for text input.")
+    
+    # Feature 2: Summarize Document
+    st.header("Feature 2: Summarize Document")
+    st.write("This feature allows you to summarize the content of a PDF document. Here's how you can use it:")
+    st.write("1. Click on the 'Summarize Document' option in the sidebar.")
+    st.write("2. Use the 'Upload a PDF file' button to upload the PDF document you want to summarize.")
+    st.write("3. Click 'Summarize PDF' to receive a summary of the document's content.")
+    st.write("4. The summary will be displayed below the uploaded document.")
+    st.write("Keep in mind that document summarization is limited to the first 2 pages of the PDF.")
+    
+    # Feature 3: Summarize URL
+    st.header("Feature 3: Summarize URL")
+    st.write("With this feature, you can generate summaries from web content. Here's how to use it:")
+    st.write("1. Select 'Summarize URL' in the sidebar.")
+    st.write("2. Enter the URL of a web page you want to summarize in the 'Enter a URL for summarization' field.")
+    st.write("3. Click 'Summarize URL' to get a summary of the web content.")
+    st.write("4. The summary will be displayed below the URL input.")
+    st.write("Please note that web content summarization is limited to 1000 words, and you should enter a valid URL.")
+    
 elif page == "Summarize Text":
     st.header("Summarize Text")
     text = st.text_area("Enter text for summarization:", max_chars=1000)
