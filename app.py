@@ -24,10 +24,10 @@ def extract_text_from_pdf(file_path):
         text = page.extract_text()
     return text
 
-choice = st.sidebar.selectbox("Select your choice", ["Summarize Text", "Summarize Document"])
+choice = st.sidebar.selectbox.radio("**Select a Page**", ["Summarize Text", "Summarize Document"])
 
 if choice == "Summarize Text":
-    st.subheader("Summarize Text using txtai")
+    st.subheader("Summarize Text")
     input_text = st.text_area("Enter your text here")
     if input_text is not None:
         if st.button("Summarize Text"):
@@ -41,7 +41,7 @@ if choice == "Summarize Text":
                 st.success(result)
 
 elif choice == "Summarize Document":
-    st.subheader("Summarize Document using txtai")
+    st.subheader("Summarize Document")
     input_file = st.file_uploader("Upload your document here", type=['pdf'])
     if input_file is not None:
         if st.button("Summarize Document"):
