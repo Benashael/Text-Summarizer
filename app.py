@@ -2,7 +2,11 @@ import streamlit as st
 from txtai.pipeline import Summary, Textractor
 from PyPDF2 import PdfReader
 
-st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="Text Summarizer App",
+    page_icon="✍️",  
+    layout="wide",
+)
 
 @st.cache_resource
 def text_summary(text, maxlength=1000):
