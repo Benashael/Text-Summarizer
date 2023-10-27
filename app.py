@@ -1,6 +1,7 @@
 import streamlit as st
 from txtai.pipeline import Summary, Textractor
 from PyPDF2 import PdfReader
+from langdetect import detect
 
 st.set_page_config(
     page_title="Text Summarizer App",
@@ -9,7 +10,23 @@ st.set_page_config(
 )
 
 @st.cache_resource
-def text_summary(text, maxlength=1000):
+def text_summary(text, maxlength=5000):
+    # Check if the text exceeds the maximum length
+    if len(text) > max_length:
+        st.warning(f"Text should not exceed {max_length} characters. Please shorten your input.")
+        return ""
+
+    # Check if the text is in a language that can be summarized
+    try:
+        language = detect(text)
+        # You can add more languages if needed
+        if language not in ["en"]:
+            st.error("Sorry, we can only summarize English text at the moment.")
+            return ""
+    except:
+        st.error("Unable to determine the language of the text. Please provide text in a supported language.")
+        return ""
+    
     #create summary instance
     summary = Summary()
     text = (text)
