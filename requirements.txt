@@ -1,7 +1,5 @@
 streamlit
 PyPDF2
-sumy
-langdetect
+transformers
 requests
 beautifulsoup4
-gensim
