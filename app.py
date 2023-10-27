@@ -24,7 +24,7 @@ def extract_text_from_pdf(file_path):
         text = page.extract_text()
     return text
 
-choice = st.sidebar.selectbox.radio("**Select a Page**", ["Summarize Text", "Summarize Document"])
+choice = st.sidebar.radio("**Select a Page**", ["Summarize Text", "Summarize Document"])
 
 if choice == "Summarize Text":
     st.subheader("Summarize Text")
