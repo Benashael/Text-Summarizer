@@ -1,5 +1,6 @@
 streamlit
 PyPDF2
-transformers
+txtai
 requests
 beautifulsoup4
+langdetect
